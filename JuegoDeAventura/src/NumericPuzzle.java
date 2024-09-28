@@ -12,7 +12,7 @@ class NumericPuzzle extends Puzzle {
         this.correctAnswer = correctAnswer;
         this.description = "Resuelve este acertijo numérico: ¿Cuál es la respuesta? (Tip: Es un número)";
     }
-
+//current
     @Override
     public boolean solve(String solution) {
         try {
