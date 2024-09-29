@@ -4,7 +4,7 @@ public class Acertijos2 {
     private List<String> acertijos;
     private List<String> respuestasCorrectas;
     private Scanner scanner;
-
+//hola
     public Acertijos2() {
         acertijos = new ArrayList<>();
         respuestasCorrectas = new ArrayList<>();
