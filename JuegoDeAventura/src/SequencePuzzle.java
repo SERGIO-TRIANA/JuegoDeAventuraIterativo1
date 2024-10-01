@@ -1,21 +1,23 @@
-import java.util.List;
-import java.util.ArrayList;
+
 import java.util.Queue;
 import java.util.LinkedList;
-import java.util.Stack;
-import java.util.Arrays;
+
 
 
 class SequencePuzzle extends Puzzle {
-    private Queue<String> correctSequence;  // Secuencia correcta
+    private final Queue<String> correctSequence;  // Secuencia correcta
     private Queue<String> remainingSequence; // Copia de la secuencia correcta para ir verificando
-    private Queue<String> playerSequence;    // Secuencia que introduce el jugador
+    private final Queue<String> playerSequence;    // Secuencia que introduce el jugador
 
     public SequencePuzzle(Queue<String> correctSequence) {
         this.correctSequence = new LinkedList<>(correctSequence);  // Secuencia original
         this.remainingSequence = new LinkedList<>(correctSequence); // Secuencia que se irá verificando
         this.playerSequence = new LinkedList<>();  // Secuencia ingresada por el jugador
-        this.description = "Resuelve este acertijo de secuencia: Introduce los pasos correctos en orden.";
+        this.description = """
+                responde en orden cada uno de estos
+                ¿Qué respiras cada día?
+                ¿Qué se mueve, pero no puedes ver?
+                ¿Qué aparece en el cielo y hace las plantas crecer?""";
     }
 
     @Override

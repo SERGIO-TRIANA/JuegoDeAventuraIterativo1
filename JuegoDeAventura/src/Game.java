@@ -2,9 +2,9 @@ import java.util.*;
 
 
 public class Game {
-    private List<Puzzle> puzzles;
+    private final List<Puzzle> puzzles;
     private int currentPuzzleIndex;
-    private UndoRedoManager undoRedoManager;
+    private final UndoRedoManager undoRedoManager;
     private GameState gameState;
 
     public Game() {
@@ -16,9 +16,11 @@ public class Game {
     }
 
     private void initializePuzzles() {
-        puzzles.add(new NumericPuzzle(42)); // Acertijo numérico
-        puzzles.add(new TextPuzzle("abracadabra")); // Acertijo textual
-        Queue<String> sequence = new LinkedList<>(Arrays.asList("paso1", "paso2", "paso3"));
+        puzzles.add(new NumericPuzzle(4)); // Acertijo numérico
+        puzzles.add((new NumericPuzzle1(5)));
+        puzzles.add(new TextPuzzle("un mapa")); // Acertijo textual
+        puzzles.add(new TextPuzzle1("incorrectamente"));
+        Queue<String> sequence = new LinkedList<>(Arrays.asList("el aire", "el viento", "el sol"));
         puzzles.add(new SequencePuzzle(sequence)); // Acertijo de secuencia
     }
 

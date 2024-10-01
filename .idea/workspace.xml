@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c63250f-65b0-4781-a204-12d7cc4bf086" name="Changes" comment="aporte vane" />
+    <list default="true" id="1c63250f-65b0-4781-a204-12d7cc4bf086" name="Changes" comment="aporte vane">
+      <change afterPath="$PROJECT_DIR$/JuegoDeAventura/src/NumericPuzzle1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JuegoDeAventura/src/TextPuzzle1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JuegoDeAventuras3/JuegoDeAventuras3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JuegoDeAventuras3/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JuegoDeAventura/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/JuegoDeAventura/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JuegoDeAventura/src/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/JuegoDeAventura/src/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JuegoDeAventura/src/NumericPuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/JuegoDeAventura/src/NumericPuzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JuegoDeAventura/src/SequencePuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/JuegoDeAventura/src/SequencePuzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JuegoDeAventura/src/TextPuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/JuegoDeAventura/src/TextPuzzle.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +62,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
@@ -59,7 +73,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/rodri/Documents/INGENERIA INFORMATICA/TERCER SEMESTRE/Estructuras de Datos Aplicadas/Codigo/JuegoDeAventuraIterativo/JuegoDeAventura/src/Main.java",
+    "onboarding.tips.debug.path": "C:/Users/rodri/Documents/INGENERIA INFORMATICA/TERCER SEMESTRE/Estructuras de Datos Aplicadas/Codigo/JuegoDeAventuraIterativo/JuegoDeAventuras3/src/Main.java",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   },

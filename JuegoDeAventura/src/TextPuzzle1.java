@@ -1,9 +1,9 @@
-class TextPuzzle extends Puzzle {
+class TextPuzzle1 extends Puzzle {
     private final String correctAnswer;
 
-    public TextPuzzle(String correctAnswer) {
+    public TextPuzzle1(String correctAnswer) {
         this.correctAnswer = correctAnswer.toLowerCase();
-        this.description = "Tengo ciudades, pero no casas. Tengo montañas, pero no árboles. ¿Qué soy?";
+        this.description = "¿Qué palabra se escribe incorrectamente en todos los diccionarios?";
     }
 
     @Override
@@ -11,4 +11,3 @@ class TextPuzzle extends Puzzle {
         return correctAnswer.equals(solution.toLowerCase());
     }
 }
-
