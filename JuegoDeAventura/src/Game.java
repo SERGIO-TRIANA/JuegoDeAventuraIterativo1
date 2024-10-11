@@ -16,8 +16,8 @@ public class Game {
     }
 
     private void initializePuzzles() {
-        puzzles.add(new NumericPuzzle(4)); // Acertijo numérico
-        puzzles.add((new NumericPuzzle1(5)));
+        puzzles.add(new NumericPuzzle(5)); // Acertijo numérico
+        puzzles.add((new NumericPuzzle1(4)));
         puzzles.add(new TextPuzzle("un mapa")); // Acertijo textual
         puzzles.add(new TextPuzzle1("incorrectamente"));
         Queue<String> sequence = new LinkedList<>(Arrays.asList("el aire", "el viento", "el sol"));
