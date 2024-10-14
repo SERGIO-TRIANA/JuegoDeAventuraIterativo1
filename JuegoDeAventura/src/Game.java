@@ -1,5 +1,6 @@
+import javax.swing.*;
+import java.io.*;
 import java.util.*;
-
 
 public class Game {
     private final List<Puzzle> puzzles;
@@ -17,7 +18,7 @@ public class Game {
 
     private void initializePuzzles() {
         puzzles.add(new NumericPuzzle(5)); // Acertijo numérico
-        puzzles.add((new NumericPuzzle1(4)));
+        puzzles.add(new NumericPuzzle1(4));
         puzzles.add(new TextPuzzle("un mapa")); // Acertijo textual
         puzzles.add(new TextPuzzle1("incorrectamente"));
         Queue<String> sequence = new LinkedList<>(Arrays.asList("el aire", "el viento", "el sol"));
@@ -29,6 +30,7 @@ public class Game {
         while (currentPuzzleIndex < puzzles.size()) {
             Puzzle current = puzzles.get(currentPuzzleIndex);
             System.out.println(current.getDescription());
+            System.out.flush(); // Asegura que todo lo escrito se muestra en consola
             String solution = scanner.nextLine();
 
             if (solution.equalsIgnoreCase("guardar")) {
@@ -42,8 +44,8 @@ public class Game {
             } else {
                 if (current.solve(solution)) {
                     System.out.println("¡Correcto!");
-                    gameState.updateState(currentPuzzleIndex);
-                    undoRedoManager.saveState(gameState);
+                    gameState.updateState(currentPuzzleIndex); // Actualiza el estado del juego
+                    undoRedoManager.saveState(gameState); // Guarda el estado en el manager de undo/redo
                     currentPuzzleIndex++;
                 } else {
                     System.out.println("Incorrecto, intenta de nuevo.");
@@ -54,18 +56,50 @@ public class Game {
         scanner.close();
     }
 
+    // Método para guardar el juego en un archivo de texto, permitiendo elegir la ubicación de guardado
     private void saveGame() {
-        gameState.saveToFile("savegame.txt");
-        System.out.println("Progreso guardado.");
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Elige dónde guardar el progreso");
+
+        // Definir el filtro para guardar archivos de texto (.txt)
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Archivos de texto", "txt"));
+
+        int userSelection = fileChooser.showSaveDialog(null);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+
+            // Asegurarse de que el archivo tenga la extensión .txt
+            if (!fileToSave.getAbsolutePath().endsWith(".txt")) {
+                fileToSave = new File(fileToSave.getAbsolutePath() + ".txt");
+            }
+
+            gameState.saveToFile(fileToSave.getAbsolutePath()); // Guardamos el juego en la ruta elegida
+            System.out.println("Progreso guardado en: " + fileToSave.getAbsolutePath());
+            System.out.flush(); // Asegura que la salida se muestre inmediatamente
+        }
     }
 
+    // Método para cargar el juego desde un archivo de texto, permitiendo elegir el archivo
     private void loadGame() {
-        gameState = GameState.loadFromFile("savegame.txt");
-        if (gameState != null) {
-            currentPuzzleIndex = gameState.getCurrentPuzzleIndex();
-            System.out.println("Progreso cargado.");
-        } else {
-            System.out.println("No se pudo cargar el progreso.");
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Elige un archivo de guardado");
+
+        // Definir el filtro para cargar solo archivos de texto (.txt)
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("Archivos de texto", "txt"));
+
+        int userSelection = fileChooser.showOpenDialog(null);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToOpen = fileChooser.getSelectedFile();
+            GameState loadedState = GameState.loadFromFile(fileToOpen.getAbsolutePath());
+
+            if (loadedState != null) {
+                gameState = loadedState; // Restaurar el estado del juego
+                currentPuzzleIndex = gameState.getCurrentPuzzleIndex();
+                System.out.println("Progreso cargado desde: " + fileToOpen.getAbsolutePath());
+            } else {
+                System.out.println("No se pudo cargar el progreso.");
+            }
+            System.out.flush(); // Asegura que la salida se muestre inmediatamente
         }
     }
 
@@ -78,6 +112,7 @@ public class Game {
         } else {
             System.out.println("No se puede retroceder más.");
         }
+        System.out.flush(); // Asegura que la salida se muestre inmediatamente
     }
 
     private void redo() {
@@ -89,10 +124,19 @@ public class Game {
         } else {
             System.out.println("No se puede avanzar más.");
         }
+        System.out.flush(); // Asegura que la salida se muestre inmediatamente
     }
 
     public static void main(String[] args) {
-        Game game = new Game();
-        game.start();
+        SwingUtilities.invokeLater(() -> {
+            System.out.println("resuelve los acertijoso para ganar el juego.\n" +
+                    "escribe guardar para guardar tu progreso.\n" +
+                    "escribe cargar para cargar un progreso guardado.\n" +
+                    "escribe retroceder para devolverte a una pregunta resuelta.\n" +
+                    "escribe avanzar para avanzar a una pregunta resuelta.\n");
+            Game game = new Game();
+            game.start();
+        });
     }
+
 }
