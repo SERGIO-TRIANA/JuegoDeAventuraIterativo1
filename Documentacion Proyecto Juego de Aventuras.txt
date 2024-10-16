@@ -1,0 +1,60 @@
+Juego de Aventuras
+Por:
+Vanessa Miranda
+Sergio Andres triana
+Estructuras de datos.
+Ingenieria Informatica
+Universidad de Caldas.
+2024
+
+1. Descripción del proyecto:
+
+Este proyecto consiste en un juego de acertijos desarrollado en Java. El jugador debe resolver una serie de acertijos secuenciales, numéricos y textuales. El juego también permite al jugador guardar y cargar su progreso, y ofrece la funcionalidad de deshacer (retroceder) y rehacer (avanzar) respuestas previas, utilizando estructuras de datos como listas y colas. Se utiliza la librería Swing de Java para las ventanas emergentes que gestionan la carga y el guardado de archivos.
+
+2. Requisitos para la instalación y ejecución del código:
+
+Java Development Kit (JDK): Versión 8 o superior.
+IntelliJ IDEA (o cualquier IDE que soporte Java).
+Swing: Ya que se utiliza JFileChooser para la selección de archivos, es necesario tener el soporte de Swing, incluido de manera predeterminada en el JDK.
+Un sistema operativo que soporte la ejecución de archivos .jar o proyectos Java.
+
+3. Instrucciones de instalación y ejecución:
+
+Clonar o descargar el proyecto en tu máquina local.
+Abrir el proyecto en un IDE compatible con Java, como IntelliJ IDEA.
+Configurar el entorno de ejecución:
+Asegurarse de tener configurado un SDK de Java (JDK 8 o superior).
+Compilar el código.
+Ejecutar el programa:
+Ejecutar el archivo Game.java que contiene el método main.
+El juego se ejecutará en la consola con las instrucciones para interactuar.
+
+4. Descripción de las funcionalidades:
+
+Resolver acertijos: El jugador debe responder a los acertijos en el orden en que aparecen.
+Guardar y cargar partida: Se permite al jugador guardar su progreso en un archivo .txt y cargarlo posteriormente desde el menú de archivos.
+Deshacer/Retroceder: Permite al jugador retroceder a un acertijo previamente resuelto.
+Rehacer/Avanzar: Permite al jugador avanzar nuevamente a un acertijo resuelto si se ha retrocedido.
+
+5. Prueba del código:
+
+Cuando ejecutes el programa, en la consola aparecerán las instrucciones y las preguntas de los acertijos:
+
+plaintext
+Copy code
+resuelve los acertijoso para ganar el juego.
+escribe guardar para guardar tu progreso.
+escribe cargar para cargar un progreso guardado.
+escribe retroceder para devolverte a una pregunta resuelta.
+escribe avanzar para avanzar a una pregunta resuelta.
+
+¿Qué número es mayor que 4 pero menor que 6?
+
+Ejemplo de interacción:
+
+El jugador ingresa la respuesta correcta o incorrecta.
+Si es correcta, pasa al siguiente acertijo, si es incorrecta puede volver a intentarlo.
+Si escribe "guardar", se abre un cuadro de diálogo para elegir dónde guardar el archivo de progreso.
+Si escribe "cargar", se abre un cuadro de diálogo para elegir un archivo guardado anteriormente.
+"Retroceder" y "Avanzar" permiten manipular el progreso para revisar o adelantar respuestas.
+Así puedes verificar que el programa funcione correctamente.
